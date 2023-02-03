@@ -4,61 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Effect JavaScript</title>
+    <title>a.t.a.g.i.e.v</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <section>
-        
         <div class="text-auto">
         </div>
-
     </section>
-    <div class="i"></div>
+    <a href="https://www.instagram.com/a.t.a.g.i.e.v/">
+
+        <div class="i"></div>
+
+    </a>
 
     <script>
         var data = [
             'Salam , xoş gəlmisiz. :)',
             'Yaradıcıqlarımla tanış olmaq istəyirsiz? :)',
             'Elə isə',
-            'Mənə yazın hahaha',
+            'Şəklin üzərinə basın',
+            'və',
+            'mənə yazın hahaha',
 
-
-           
         ]
         
         var div = document.querySelector('div')
         var root = document.querySelector(':root')
         var initialDataIndex = 0
         var writtingTime = 50
-        var delayTime = 2500
+        var delayTime = 500
         var clearingTime = 15
         var caretBlinking = 700
 
-        // initialize
         writeText(initialDataIndex)
 
-        // write text function
         function writeText(index){
             var i = 0
             var interval = setInterval(() => {
-                // get firts char and inter in div and then increment index
                 div.innerHTML += data[index][i]
                 if(i == data[index].length - 1){
-                    // if data in data[index] completed then
-                    // stop intreval
-                    // clear text after delay
                     i = 0
                     clearInterval(interval)
                     setTimeout(clearText, delayTime)
                 }else{
                     i++;
                 }
-                // stop blinking during writting
                 root.style.setProperty('--caret-display', 'inline-block')
             }, writtingTime);
-            // play button press sound here if you need
-            // playSound()
         }
 
         var dataIndex = initialDataIndex+1
@@ -66,19 +59,11 @@
             var interval = setInterval(() => {
                 var divData = div.innerHTML
                 if(divData !== ''){
-                    // it will get div data and remove last char each interval
-                    // and again save it
                     div.innerHTML = divData.substring(0, divData.length-1)
-                    // stop blinking during removing
                     root.style.setProperty('--caret-display', 'inline-block')
                 }else{
-                    // when all data removed
-                    // stop interval
                     clearInterval(interval)
-                    // write text again with new index
                     writeText(dataIndex);
-                    // now if all index of data is complete then restart
-                    // otherwise increment index
                     (dataIndex == data.length-1) ? dataIndex = 0 : dataIndex++
                 }
             }, clearingTime);
