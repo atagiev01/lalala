@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap');
+:root{
+    --caret-display: inline-block;
+}
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+section{
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    top: 100px;
+    bottom: 100px;
+    left: 0px;
+    text-align: center;
+    display: flex !important;
+    justify-content: space-evenly;
+    right: 0px;
+    margin: auto;
+    -webkit-box-align: center;
+    display: -webkit-box;
+}
+.text-auto{
+    font-size: 60px;
+    font-family: 'PT Sans', sans-serif;
+    color: #00FFAB;
+}
+.text-auto::after{
+    content: '';
+    width: 4px;
+    height: 56px;
+    background-color: #00FFAB;
+    margin-bottom: -6px;
+    margin-left: 2px;
+    display: var(--caret-display);
+}
+.i{
+background-image: url("i.png");
+border-radius: 200px;
+width:200px;
+height: 200px; 
+background-position: center !important;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+
+@media only screen and (max-width:500px){
+    section{
+        width: 50%;
+        height: 400px;
+        position: absolute;
+        top: 400px;
+        bottom: 100px;
+        left: 0px;
+        text-align: center;
+        display: flex !important;
+        justify-content: space-evenly;
+        right: 0px;
+    }
+    .text-auto{
+        font-size: 60px;
+        font-family: 'PT Sans', sans-serif;
+        color: #00FFAB;
+    }
+    .text-auto::after{
+        content: '';
+        width: 4px;
+        height: 56px;
+        background-color: #00FFAB;
+        margin-bottom: -6px;
+        margin-left: 2px;
+        display: var(--caret-display);
+    }
+
+}
+@media only screen and (max-width:400px){
+    section{
+        width: 30% !important;
+        height: 400px;
+        position: absolute;
+        top: 400px;
+        bottom: 100px;
+        left: 0px;
+        text-align: center;
+        display: flex !important;
+        justify-content: space-evenly;
+        right: 0px;
+    }
+    .text-auto{
+        font-size: 40px;
+        font-family: 'PT Sans', sans-serif;
+        color: #00FFAB;
+    }
+    .text-auto::after{
+        content: '';
+        width: 4px;
+        height: 56px;
+        background-color: #00FFAB;
+        margin-bottom: -6px;
+        margin-left: 2px;
+        display: var(--caret-display);
+    }
+
+}
